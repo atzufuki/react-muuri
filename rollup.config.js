@@ -29,7 +29,14 @@ export default {
     url(),
     babel({
       exclude: 'node_modules/**',
-      plugins: [ 'external-helpers' ]
+      plugins: [
+        '@babel/plugin-proposal-class-properties',
+        '@babel/plugin-external-helpers',
+        '@babel/plugin-transform-runtime',
+        '@babel/plugin-syntax-dynamic-import',
+        '@babel/plugin-syntax-import-meta'
+      ],
+      runtimeHelpers: true
     }),
     resolve(),
     commonjs()
